@@ -1,16 +1,87 @@
-# React + Vite
+🛠️ Tech Stack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend: React JS
 
-Currently, two official plugins are available:
+Build Tool: Vite
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+UI Library: Material UI (MUI)
 
-## React Compiler
+Icons: Material UI Icons
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Image Slider: Swiper.js
 
-## Expanding the ESLint configuration
+Styling: MUI sx prop & responsive system
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Theme: Dark & Light mode support
+
+Language: JavaScript (ES6+)
+
+🎨 UI & Design
+
+Modern and professional UI suitable for business websites
+
+Clean typography and gradient backgrounds
+
+Smooth dark & light theme transitions
+
+Fully responsive layout (mobile, tablet, desktop)
+
+Card-based design for services and gallery
+
+📄 Pages & Sections
+
+Home: Hero section with business introduction and call-to-action buttons
+
+About: Company overview, expertise, and trust highlights
+
+Services: POP, Gypsum, PVC, Grid & custom false ceiling solutions
+
+Gallery: Image showcase using Swiper with navigation and pagination
+
+Contact: Location, phone, and free consultation details
+
+🖼️ Gallery Features
+
+Swiper.js image slider
+
+Navigation arrows & pagination dots
+
+Responsive slides per view
+
+Smooth transitions and hover effects
+
+Image download option
+
+🌙 Theme Features
+
+Dark mode with premium gradients
+
+Light mode with soft professional colors
+
+Automatic UI color adaptation
+
+Smooth theme switching experience
+
+⚙️ Functional Features
+
+Smooth scroll navigation between sections
+
+Reusable React components
+
+Clean and maintainable code structure
+
+Fast development and build performance using Vite
+
+🚀 Performance & Best Practices
+
+Optimized rendering with React
+
+Modular component structure
+
+Scalable project architecture
+
+Easy customization and extension
+
+🎯 Project Purpose
+
+The goal of this project is to create a professional online presence for KGN Ceiling Works, showcasing modern false ceiling designs, services, and customer trust through an elegant and responsive web interface.
