@@ -13,6 +13,9 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
+import KgnLogo from '../assets/kgnLogo.png';
+import darkKgnLogo from '../assets/darkLogo.png';
+
 
 const Footer = () => {
 
@@ -156,7 +159,7 @@ const Footer = () => {
               <Stack direction="row" spacing={1} alignItems="center">
                 <EmailIcon fontSize="small" />
                 <Typography variant="body2" sx={{ opacity: 0.9 }}>
-                  kgnceilingworks@gmail.com
+                  roshansiddiq78@gmail.com
                 </Typography>
               </Stack>
             </Stack>

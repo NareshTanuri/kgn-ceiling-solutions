@@ -16,6 +16,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import { ColorModeContext } from '../theme-context';
+import KgnLogo from '../assets/kgnLogo.png';
+import darkKgnLogo from '../assets/darkLogo.png';
+
 
 const menuItems = [
     { label: 'Home', id: 'home' },
@@ -74,11 +77,10 @@ const Navbar = () => {
                             sx={{
                                 fontWeight: 700,
 
-                                /* Responsive font size */
                                 fontSize: {
-                                    xs: '1.05rem',   // Mobile
-                                    sm: '1.2rem',    // Tablet
-                                    md: '1.4rem',    // Desktop
+                                    xs: '1.05rem',
+                                    sm: '1.2rem',
+                                    md: '1.4rem',
                                 },
 
                                 letterSpacing: {
@@ -98,10 +100,22 @@ const Navbar = () => {
 
                                 display: 'flex',
                                 alignItems: 'center',
+                                gap: 1, // space between logo & text
                             }}
                         >
+                            <img
+                                src={theme.palette.mode === "dark" ? darkKgnLogo : KgnLogo}
+                                alt="KGN Logo"
+                                style={{
+                                    height: '80px',   // keeps it inline
+                                    width: 'auto',
+                                    objectFit: 'contain',
+                                    borderRadius: 25,
+                                }}
+                            />
                             KGN CEILING WORKS
                         </Typography>
+
 
 
                         {/* DESKTOP MENU (WEB VIEW ONLY) */}
@@ -113,7 +127,6 @@ const Navbar = () => {
                         >
                             {menuItems.map((item) => {
                                 const isActive = activeMenu === item.id;
-
                                 return (
                                     <Button
                                         key={item.id}

@@ -836,6 +836,10 @@ const Section = ({ id, title }) => {
                                                 name: "Anjali Verma",
                                                 rating: 5, comment: "Clean work, polite staff, and beautiful ceiling design. 100% satisfied!",
                                             },
+                                            {
+                                                name: "Naaresh",
+                                                rating: 5, comment: "Outstanding work with neat and high-quality finishing at a very reasonable price.The staff are highly responsible and delivered excellent, professional service."
+                                            }
                                         ].map((review, index) => (
                                             <Grid item size={{ xs: 12, md: 6 }} key={index}>
                                                 <Card
@@ -844,7 +848,7 @@ const Section = ({ id, title }) => {
                                                         borderRadius: 3,
                                                         overflow: "hidden",
                                                         transition: "all 0.35s ease",
-
+                                                        minHeight: 130,
                                                         /* DEFAULT LEFT BORDER */
                                                         borderLeft: "4px solid",
                                                         borderLeftColor:
@@ -1092,7 +1096,7 @@ const Section = ({ id, title }) => {
                                                         { label: "user", value: "Shaik Abubakar Siddik - Designer Ceiling Contractor", icon: "🙍🏻‍♂️" },
                                                         { label: "Address", value: "S/O Khadar,30-94,Near Old KVR Bus Stand,Nandigama,NTR District AP-521185", icon: "📍" },
                                                         { label: "Phone", value: "9666606417", icon: "📞" },
-                                                        { label: "Email", value: "kgnceilingworks@gmail.com", icon: "✉️" },
+                                                        { label: "Email", value: "roshansiddiq78@gmail.com", icon: "✉️" },
                                                     ].map((item, index) => (
                                                         <Box
                                                             key={index}
