@@ -13,10 +13,7 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
-import KgnLogo from '../assets/kgnLogo.png';
-import darkKgnLogo from '../assets/darkLogo.png';
-
-
+ 
 const Footer = () => {
 
   const handleScroll = (id) => {

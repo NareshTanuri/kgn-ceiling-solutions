@@ -24,8 +24,7 @@ import { Navigation, Pagination, Autoplay, A11y } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
-import homeCellingImage from '../assets/homeCellingImg.avif'
+ 
 
 // Swipper Images
 import Image1 from "../assets/image1.jpg";
@@ -48,7 +47,7 @@ import Image17 from "../assets/image17.jpeg";
 
 
 
-const Section = ({ id, title }) => {
+const Section = ({ id }) => {
     const theme = useTheme();
     const prevRef = useRef(null);
     const nextRef = useRef(null);
