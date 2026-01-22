@@ -27,6 +27,26 @@ import "swiper/css/pagination";
 
 import homeCellingImage from '../assets/homeCellingImg.avif'
 
+// Swipper Images
+import Image1 from "../assets/image1.jpg";
+import Image2 from "../assets/image2.jpg";
+import Image3 from "../assets/image3.webp";
+import Image4 from "../assets/image4.jpg";
+import Image5 from "../assets/image5.jpg";
+import Image6 from "../assets/image6.jpg";
+import Image7 from "../assets/image7.png";
+import Image8 from "../assets/image8.jpeg";
+import Image9 from "../assets/image9.jpeg";
+import Image10 from "../assets/image10.webp";
+import Image11 from "../assets/image11.jpg";
+import Image12 from "../assets/image12.jpg";
+import Image13 from "../assets/image13.jpeg";
+import Image14 from "../assets/image14.jpeg";
+import Image15 from "../assets/image15.jpeg";
+import Image16 from "../assets/image16.jpeg";
+import Image17 from "../assets/image17.jpeg";
+
+
 
 const Section = ({ id, title }) => {
     const theme = useTheme();
@@ -70,10 +90,17 @@ const Section = ({ id, title }) => {
     };
 
 
-    const images = Array.from({ length: 10 }).map((_, i) => ({
-        id: i + 1,
-        src: `https://picsum.photos/300/400?random=${i + 1}`,
-        title: "Adfdfdfdf"
+    const imageSources = [
+        Image1, Image6, Image11, Image16,
+        Image2, Image7, Image12, Image17,
+        Image3, Image8, Image13,
+        Image4, Image9, Image14,
+        Image5, Image10, Image15,
+    ];
+    const images = imageSources.map((src, index) => ({
+        id: index + 1,
+        src,
+        title: "KGN Ceiling Work",
     }));
 
 
@@ -228,6 +255,7 @@ const Section = ({ id, title }) => {
                                             <Button
                                                 variant="contained"
                                                 size="large"
+                                                onClick={() => handleScroll("contact")}
                                                 sx={{
                                                     px: 4,
                                                     borderRadius: 3,
@@ -268,12 +296,13 @@ const Section = ({ id, title }) => {
                                     >
                                         <Box
                                             component="img"
-                                            src={homeCellingImage}
+                                            src={Image7}
                                             alt="Ceiling Work"
                                             sx={{
                                                 width: "100%",
                                                 height: { xs: 260, sm: 320, md: 420 },
                                                 objectFit: "cover",
+                                                borderRadius: 10,
                                             }}
                                         />
                                     </Box>
@@ -458,11 +487,10 @@ const Section = ({ id, title }) => {
                                                 lineHeight: 1.3,
                                             }}
                                         >
-                                            Our Services
+                                            About
                                         </Typography>
 
-                                        <Typography sx={{ mt: 1.5, fontWeight: 500 }} variant='h6'>    We provide high-quality false ceiling and lighting solutions tailored to
-                                            your space and budget.</Typography>
+                                        <Typography sx={{ mt: 1.5, fontWeight: 500 }} variant='h6'>KGN Ceiling delivers modern, stylish false ceiling solutions <br /> That enhance the beauty and comfort of homes and commercial spaces.</Typography>
                                     </Box>
 
                                     <Grid container spacing={4} mt={3}>
@@ -1061,6 +1089,7 @@ const Section = ({ id, title }) => {
                                                     <Divider />
 
                                                     {[
+                                                        { label: "user", value: "Shaik Abubakar Siddik - Designer Ceiling Contractor", icon: "🙍🏻‍♂️" },
                                                         { label: "Address", value: "S/O Khadar,30-94,Near Old KVR Bus Stand,Nandigama,NTR District AP-521185", icon: "📍" },
                                                         { label: "Phone", value: "9666606417", icon: "📞" },
                                                         { label: "Email", value: "kgnceilingworks@gmail.com", icon: "✉️" },

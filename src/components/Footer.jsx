@@ -64,13 +64,13 @@ const Footer = () => {
             </Typography>
 
             <Stack direction="row" spacing={1.5} mt={2}>
-              <IconButton sx={{ color: "#fff" }}>
+              <IconButton href="https://www.facebook.com/KgnFalseCeiling/" target="_blank">
                 <FacebookIcon />
               </IconButton>
-              <IconButton sx={{ color: "#fff" }}>
+              <IconButton href="https://www.instagram.com/kgnceilingworks/" target="_blank">
                 <InstagramIcon />
               </IconButton>
-              <IconButton sx={{ color: "#fff" }}>
+              <IconButton href={`https://api.whatsapp.com/send/?phone=91${9666606417}&text&type=phone_number&app_absent=0`} target="_blank">
                 <WhatsAppIcon />
               </IconButton>
             </Stack>
@@ -172,7 +172,7 @@ const Footer = () => {
           sx={{ opacity: 0.85 }}
         >
           © {new Date().getFullYear()} KGN Ceiling Works. Designed & Developed by{" "}
-          <strong>Naresh Tanuri</strong> – Full Stack Developer.
+          <strong>Naresh Tanuri</strong> (Full Stack Developer) <br /> | 📞 +91 9347081115 | ✉️ nareshtanuri8@gmail.com |
         </Typography>
       </Container>
     </Box>
