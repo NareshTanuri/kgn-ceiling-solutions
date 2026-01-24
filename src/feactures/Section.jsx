@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import {
     Box, Typography, Container, useTheme,
     Card,
@@ -7,7 +7,9 @@ import {
     Avatar,
     Rating,
     IconButton, Tooltip,
-    Button, Stack, Divider, CardMedia
+    Button, Stack, Divider, CardMedia,
+    CardHeader,
+    CardActions, useMediaQuery
 } from '@mui/material';
 import contactQrCode from '../assets/contactQr.jpeg';
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
@@ -18,39 +20,68 @@ import LightIcon from "@mui/icons-material/LightMode";
 import HomeWorkIcon from "@mui/icons-material/HomeWork";
 import ViewQuiltIcon from "@mui/icons-material/ViewQuilt";
 import WaterDropIcon from "@mui/icons-material/WaterDrop";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay, A11y } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
- 
 
 // Swipper Images
-import Image1 from "../assets/image1.jpg";
 import Image2 from "../assets/image2.jpg";
 import Image3 from "../assets/image3.webp";
+import Image7 from "../assets/image7.png";
+import Image9 from "../assets/image9.jpeg";
+import Image12 from "../assets/image12.jpg";
+import Image16 from "../assets/image16.jpeg";
+
+// More Images
+import Image18 from "../assets/image18.jpeg";
+import Image19 from "../assets/image19.jpeg";
+import Image20 from "../assets/image20.jpeg";
+import Image21 from "../assets/image21.jpeg";
+import Image22 from "../assets/image22.jpeg";
+import Image23 from "../assets/image23.jpeg";
+import Image24 from "../assets/image24.jpeg";
+import Image25 from "../assets/image25.jpeg";
+import Image26 from "../assets/image26.jpeg";
+import Image27 from "../assets/image27.jpeg";
+import Image28 from "../assets/image28.jpeg";
+import Image30 from "../assets/image30.jpeg";
+import Image31 from "../assets/image31.jpeg";
+import Image32 from "../assets/image32.jpeg";
+import Image33 from "../assets/image33.jpeg";
+import Image34 from "../assets/image34.jpeg";
+import Image35 from "../assets/image35.jpeg";
+import Image36 from "../assets/image36.jpeg";
+import Image37 from "../assets/image37.jpeg";
+import Image38 from "../assets/image38.jpeg";
+import Image39 from "../assets/image39.jpeg";
+import Image40 from "../assets/image40.jpeg";
+import Image42 from "../assets/image42.jpeg";
+import Image43 from "../assets/image43.jpeg";
+import Image44 from "../assets/image44.jpeg";
+import Image45 from "../assets/image45.jpeg";
+import Image1 from "../assets/image1.jpg";
 import Image4 from "../assets/image4.jpg";
 import Image5 from "../assets/image5.jpg";
 import Image6 from "../assets/image6.jpg";
-import Image7 from "../assets/image7.png";
 import Image8 from "../assets/image8.jpeg";
-import Image9 from "../assets/image9.jpeg";
 import Image10 from "../assets/image10.webp";
 import Image11 from "../assets/image11.jpg";
-import Image12 from "../assets/image12.jpg";
 import Image13 from "../assets/image13.jpeg";
 import Image14 from "../assets/image14.jpeg";
 import Image15 from "../assets/image15.jpeg";
-import Image16 from "../assets/image16.jpeg";
 import Image17 from "../assets/image17.jpeg";
-
-
 
 const Section = ({ id }) => {
     const theme = useTheme();
     const prevRef = useRef(null);
     const nextRef = useRef(null);
+    const isMobile = useMediaQuery("(max-width:600px)");
+    const [currentIndex, setCurrentIndex] = useState(0);
 
     const handleScroll = (id) => {
         const section = document.getElementById(id);
@@ -90,12 +121,45 @@ const Section = ({ id }) => {
 
 
     const imageSources = [
-        Image1, Image6, Image11, Image16,
-        Image2, Image7, Image12, Image17,
-        Image3, Image8, Image13,
-        Image4, Image9, Image14,
-        Image5, Image10, Image15,
+        Image2,
+        Image3,
+        Image7,
+        Image9,
+        Image12,
+        Image16,
     ];
+
+
+    const ceilingImages = [
+        Image18, Image19, Image20, Image21, Image22,
+        Image23, Image24, Image25, Image26, Image27,
+        Image28, Image4, Image30, Image31, Image32,
+        Image33, Image34, Image35, Image36, Image37,
+        Image38, Image39, Image40, Image1, Image42,
+        Image43, Image44, Image45, Image5, Image6,
+        Image8, Image10, Image11, Image13, Image14,
+        Image15, Image17,
+    ];
+
+    const avatarColors = [
+        "linear-gradient(135deg, #667eea 0%, #764ba2 100%)", // blue-purple
+        "linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%)", // pink-red
+        "linear-gradient(135deg, #43cea2 0%, #185a9d 100%)",  // green-teal
+        "linear-gradient(135deg, #f7971e 0%, #ffd200 100%)",// orange-yellow
+        "linear-gradient(135deg, #15d8e6ff 0%, #5b86e5 100%)", // cyan-blue
+        "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",// coral-yellow
+        "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)", // purple-red
+        "linear-gradient(135deg, #30cfd0 0%, #330867 100%)",// teal-indigo
+        "linear-gradient(135deg, #fa383fff 0%, #e712a4ff 100%)",  // soft pink
+        "linear-gradient(135deg, #50e3eeff 0%, #2c7be9ff 100%)", // aqua-blue
+        "linear-gradient(135deg, #691350ff 0%, #5b8ce0ff 100%)", // pink-lavender
+        "linear-gradient(135deg, #5fe26cff 0%, #8de1f8ff 100%)", // mint-blue
+        "linear-gradient(135deg, #f15d18ff 0%, #5b91e9ff 100%)", // subtle gray-blue
+        "linear-gradient(135deg, #df8e1cff 0%, #491604ff 100%)",// peach-cream
+    ];
+
+
+
     const images = imageSources.map((src, index) => ({
         id: index + 1,
         src,
@@ -159,7 +223,24 @@ const Section = ({ id }) => {
                 "LED lighting, spotlights, and cove lighting to enhance your interior look.",
             icon: <LightIcon />,
         },
-    ]
+    ];
+
+    const itemsPerRow = isMobile ? 1 : 3;
+    const handlePrevClick = () => {
+        // Ensure the index doesn't go below 0
+        if (currentIndex > 0) {
+            setCurrentIndex(prevIndex => prevIndex - itemsPerRow);
+        }
+    };
+
+    const handleNextClick = () => {
+        // Ensure the index doesn't exceed the bounds of the array
+        if (currentIndex + itemsPerRow < ceilingImages.length) {
+            setCurrentIndex(prevIndex => prevIndex + itemsPerRow);
+        }
+    }
+
+    const visibleItems = ceilingImages.slice(currentIndex, currentIndex + itemsPerRow);
 
     return (
         <Box
@@ -168,7 +249,7 @@ const Section = ({ id }) => {
             sx={{
                 py: id === "home" ? 0 : 8,
                 minHeight: '60vh',
-                borderBottom: id === "contact" ? 0 : 1,
+                borderBottom: id === "more-gallery" ? 0 : 1,
                 borderColor: 'divider',
                 scrollMarginTop: '80px'
             }}
@@ -989,7 +1070,6 @@ const Section = ({ id }) => {
                                         <Typography sx={{ mt: 1.5, fontWeight: 500 }} variant='h6'>Get in touch with us for a free consultation and quote</Typography>
                                     </Box>
 
-
                                     <Card
                                         elevation={3}
                                         sx={{
@@ -1128,6 +1208,171 @@ const Section = ({ id }) => {
                                         </Grid>
                                     </Card>
                                 </Box>
+                            ) : id === "more-gallery" ? (
+                                <Box>
+                                    <Box sx={{ textAlign: "center", wordBreak: "break-all" }}>
+                                        <Typography
+                                            variant="h4"
+                                            sx={{
+                                                textAlign: "center",
+                                                fontWeight: 600,
+
+                                                /* Responsive font size */
+                                                fontSize: {
+                                                    xs: "30px",   // mobile
+                                                    sm: "24px",   // tablet
+                                                    md: "35px",   // desktop
+                                                },
+
+                                                /* Allow wrapping on mobile */
+                                                whiteSpace: {
+                                                    xs: "normal",
+                                                    md: "nowrap",
+                                                },
+
+                                                background:
+                                                    theme.palette.mode === "dark"
+                                                        ? "linear-gradient(90deg,#90caf9,#e3f2fd)"
+                                                        : "linear-gradient(90deg,#1976d2,#42a5f5)",
+
+                                                WebkitBackgroundClip: "text",
+                                                WebkitTextFillColor: "transparent",
+
+                                                lineHeight: 1.3,
+                                            }}
+                                        >
+                                            Explore Perfect Ceilings for Your Home
+                                        </Typography>
+
+                                        <Typography sx={{ mt: 1.5, fontWeight: 500 }} variant='h6'>Discover stylish and durable ceiling designs that elevate your living space 🌟🏗️</Typography>
+                                    </Box>
+
+                                    <Box
+                                        sx={{
+                                            position: "relative",
+                                            maxWidth: 1500,
+                                            mx: "auto",
+                                            p: 3,
+                                            mt: 3,
+                                            borderRadius: 4,
+                                            background:
+                                                theme.palette.mode === "dark"
+                                                    ? "linear-gradient(145deg,#1b1b1b,#262626)"
+                                                    : "linear-gradient(145deg,#ffffff,#f1f4fb)",
+                                            border:
+                                                theme.palette.mode === "dark"
+                                                    ? "1px solid rgba(255,255,255,0.08)"
+                                                    : "1px solid rgba(0,0,0,0.08)",
+                                            boxShadow:
+                                                theme.palette.mode === "dark"
+                                                    ? "0 20px 40px rgba(0,0,0,0.6)"
+                                                    : "0 20px 40px rgba(0,0,0,0.12)",
+                                        }}
+                                    >
+                                        {/* LEFT ARROW */}
+                                        <IconButton onClick={handlePrevClick}
+                                            disabled={currentIndex === 0} sx={{ ...arrowStyle, left: -10 }}>
+                                            <ArrowBackIosNewIcon fontSize="small" />
+                                        </IconButton>
+
+                                        {/* RIGHT ARROW */}
+                                        <IconButton onClick={handleNextClick}
+                                            disabled={currentIndex + itemsPerRow >= ceilingImages.length} sx={{ ...arrowStyle, right: -10 }}>
+                                            <ArrowForwardIosIcon fontSize="small" />
+                                        </IconButton>
+
+
+                                        <Box
+                                            sx={{
+                                                display: "grid",
+                                                gridTemplateColumns: {
+                                                    xs: "1fr",
+                                                    sm: "repeat(2, 1fr)",
+                                                    md: "repeat(3, 1fr)",
+                                                },
+                                                gap: 3,
+                                            }}
+                                        >
+                                            {visibleItems.map((img, index) => (
+                                                <Card
+                                                    key={index}
+                                                    sx={{
+                                                        borderRadius: 4,
+                                                        overflow: "hidden",
+                                                        transition: "0.4s",
+                                                        boxShadow: (theme) =>
+                                                            theme.palette.mode === "dark"
+                                                                ? "0 10px 30px rgba(0,0,0,0.7)"
+                                                                : "0 10px 30px rgba(0,0,0,0.2)",
+                                                        "&:hover": {
+                                                            transform: "translateY(-8px)",
+                                                            boxShadow: (theme) =>
+                                                                theme.palette.mode === "dark"
+                                                                    ? "0 20px 50px rgba(0,0,0,0.9)"
+                                                                    : "0 20px 50px rgba(0,0,0,0.3)",
+                                                        },
+                                                    }}
+                                                >
+                                                    {/* HEADER */}
+                                                    <CardHeader
+                                                        avatar={
+                                                            <Avatar
+                                                                sx={{
+                                                                    background: avatarColors[index % avatarColors.length],
+                                                                    color: (theme) =>
+                                                                        theme.palette.mode === "dark" ? "#000" : "#fff",
+                                                                    fontWeight: 700,
+                                                                }}
+                                                            >
+                                                                K
+                                                            </Avatar>
+                                                        }
+                                                        title="Ceiling Design"
+                                                        subheader={`Design ${currentIndex + index + 1}`}
+                                                    />
+
+
+                                                    {/* IMAGE */}
+                                                    <CardMedia
+                                                        component="img"
+                                                        image={img}
+                                                        alt="Ceiling"
+                                                        sx={{
+                                                            height: 220,
+                                                            objectFit: "cover",
+                                                        }}
+                                                    />
+
+                                                    {/* ACTIONS */}
+                                                    <CardActions
+                                                        sx={{
+                                                            justifyContent: "space-between",
+                                                            px: 2,
+                                                        }}
+                                                    >
+                                                        <Button
+                                                            startIcon={<VisibilityIcon />}
+                                                            size="small"
+                                                            onClick={() => window.open(img, "_blank")}
+                                                        >
+                                                            View
+                                                        </Button>
+
+                                                        <IconButton
+                                                            component="a"
+                                                            href={img}
+                                                            download
+                                                            onClick={() => handleDownload(img)}
+                                                        >
+                                                            <DownloadIcon />
+                                                        </IconButton>
+                                                    </CardActions>
+                                                </Card>
+                                            ))}
+                                        </Box>
+                                    </Box>
+
+                                </Box>
                             ) : null
                         }
                     </Container>
@@ -1148,6 +1393,7 @@ const Sections = () => {
             <Section id="gallery" title="Gallery" />
             <Section id="reviews" title="Reviews" />
             <Section id="contact" title="Contact" />
+            <Section id="more-gallery" title="More-gallery'" />
         </>
     );
 };

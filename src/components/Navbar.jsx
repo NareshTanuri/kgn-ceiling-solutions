@@ -27,6 +27,7 @@ const menuItems = [
     { label: 'Gallery', id: 'gallery' },
     { label: 'Reviews', id: 'reviews' },
     { label: 'Contact', id: 'contact' },
+    { label: 'More', id: 'more-gallery' },
 ];
 
 const Navbar = () => {
@@ -107,7 +108,7 @@ const Navbar = () => {
                                 src={theme.palette.mode === "dark" ? darkKgnLogo : KgnLogo}
                                 alt="KGN Logo"
                                 style={{
-                                    height: '80px',   // keeps it inline
+                                    height: '60px',   // keeps it inline
                                     width: 'auto',
                                     objectFit: 'contain',
                                     borderRadius: 25,
